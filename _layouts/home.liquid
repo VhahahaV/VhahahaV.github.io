@@ -1,0 +1,80 @@
+---
+layout: default
+---
+{% capture protected_social_links %}{% social_links %}{% endcapture %}
+<div class="post home-page">
+  <article>
+    <header class="home-hero">
+      <div class="home-hero__copy">
+        <p class="home-eyebrow">Generative AI · Multimodal Learning · Digital Humans · Intelligent Agents</p>
+        <h1 class="home-title">Zhuoqiang Cai</h1>
+        <p class="home-role">{{ page.subtitle }}</p>
+        <p class="home-tagline">I build generative models for interactive digital humans and intelligent agents.</p>
+        {% if page.social %}
+          <div class="home-social" aria-label="Academic and social links">{{ protected_social_links | al_email_protect_html }}</div>
+        {% endif %}
+      </div>
+
+      {% if page.profile and page.profile.image %}
+        <figure class="home-portrait-wrap">
+          <img
+            class="home-portrait"
+            src="{{ page.profile.image | prepend: '/assets/img/' | relative_url }}"
+            alt="Portrait of Zhuoqiang Cai"
+            width="1200"
+            height="1200"
+            loading="eager"
+          >
+        </figure>
+      {% endif %}
+    </header>
+
+    <div class="home-intro">{{ content }}</div>
+
+    {% if page.selected_papers %}
+      <section class="home-section home-publications" aria-labelledby="selected-publications-heading">
+        <div class="section-heading-row">
+          <div>
+            <p class="section-kicker">Research output</p>
+            <h2 id="selected-publications-heading">Selected Publications</h2>
+          </div>
+          <a class="section-link" href="{{ '/publications/' | relative_url }}">View all publications →</a>
+        </div>
+        {% include selected_papers.liquid %}
+      </section>
+    {% endif %}
+
+    <section class="home-section home-projects" aria-labelledby="selected-projects-heading">
+      <div class="section-heading-row">
+        <div>
+          <p class="section-kicker">Current directions</p>
+          <h2 id="selected-projects-heading">Selected Projects</h2>
+        </div>
+        <a class="section-link" href="{{ '/projects/' | relative_url }}">Explore projects →</a>
+      </div>
+      {% include featured_projects.liquid %}
+    </section>
+
+    {% if page.announcements and page.announcements.enabled %}
+      <section class="home-section home-news" aria-labelledby="recent-news-heading">
+        <div class="section-heading-row">
+          <div>
+            <p class="section-kicker">Updates</p>
+            <h2 id="recent-news-heading">Recent News</h2>
+          </div>
+          <a class="section-link" href="{{ '/news/' | relative_url }}">All news →</a>
+        </div>
+        {% include news.liquid limit=true %}
+      </section>
+    {% endif %}
+
+    {% if page.social %}
+      <section class="home-section home-contact" aria-labelledby="contact-heading">
+        <p class="section-kicker">Contact</p>
+        <h2 id="contact-heading">Let’s talk research.</h2>
+        <p>{{ site.contact_note }}</p>
+        <div class="contact-icons">{{ protected_social_links | al_email_protect_html }}</div>
+      </section>
+    {% endif %}
+  </article>
+</div>
