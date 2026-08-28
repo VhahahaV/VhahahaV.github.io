@@ -126,6 +126,25 @@ layout: default
       </section>
     {% endif %}
 
+    {% if page.interests %}
+      <section class="home-section home-interests" aria-labelledby="interests-heading">
+        <div class="section-heading-row">
+          <div>
+            <p class="section-kicker">Beyond research</p>
+            <h2 id="interests-heading">Personal Interests</h2>
+          </div>
+        </div>
+        <p class="interests-intro">
+          Away from the screen, I enjoy strength training, basketball, running, rock climbing, swimming, skiing, and hiking.
+        </p>
+        <ul class="interest-list" aria-label="Personal interests">
+          {% for interest in page.interests %}
+            <li>{{ interest }}</li>
+          {% endfor %}
+        </ul>
+      </section>
+    {% endif %}
+
     {% if page.announcements and page.announcements.enabled %}
       <section class="home-section home-news" aria-labelledby="recent-news-heading">
         <div class="section-heading-row">
@@ -136,23 +155,6 @@ layout: default
           <a class="section-link" href="{{ '/news/' | relative_url }}">All news →</a>
         </div>
         {% include news.liquid limit=true %}
-      </section>
-    {% endif %}
-
-    {% if page.interests %}
-      <section class="home-section home-interests" aria-labelledby="interests-heading">
-        <div class="section-heading-row">
-          <div>
-            <p class="section-kicker">Beyond research</p>
-            <h2 id="interests-heading">Always in Motion</h2>
-          </div>
-        </div>
-        <p class="interests-intro">Away from the screen, I enjoy training, team sports, and being outdoors.</p>
-        <ul class="interest-list" aria-label="Personal interests">
-          {% for interest in page.interests %}
-            <li>{{ interest }}</li>
-          {% endfor %}
-        </ul>
       </section>
     {% endif %}
 
