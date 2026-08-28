@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Our team won **1st place** in the Dynamic Novel View Synthesis Track of the **CVPR 2025 NeRSemble Benchmark Challenge**.
+Our team won **1st place** in the Dynamic Novel View Synthesis Track of the [**CVPR 2025 NeRSemble Benchmark Challenge**](https://kaldir.vc.cit.tum.de/nersemble_benchmark/cvpr2025).

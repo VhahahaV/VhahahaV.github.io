@@ -1,12 +1,13 @@
 cv:
   name: Zhuoqiang Cai
-  label: Master’s Student
+  label: M.S. Student in Computer Science and Technology
   email: czq666@sjtu.edu.cn
   location: Shanghai, China
   image: ""
   summary: >
     Master’s student at Shanghai Jiao Tong University working on generative AI,
-    multimodal learning, digital humans, 3D facial motion, and intelligent agents.
+    multimodal learning, digital humans, 3D facial motion, and intelligent agents;
+    also an open-source desktop software builder.
 
   social_networks:
     - network: GitHub
@@ -16,9 +17,26 @@ cv:
     Education:
       - institution: Shanghai Jiao Tong University
         location: Shanghai, China
+        area: Computer Science and Technology
         studyType: Master’s Student
+        start_date: 2025
+        end_date: Present
         highlights:
           - Research interests include generative AI, multimodal learning, digital humans, and intelligent agents.
+
+      - institution: Shanghai Jiao Tong University
+        location: Shanghai, China
+        area: Software Engineering
+        studyType: Bachelor’s
+        start_date: 2021
+        end_date: 2025
+
+    Experience:
+      - company: Taobao and Tmall Group, Alibaba Group
+        position: Intern
+        location: Hangzhou, China
+        start_date: 2024-07
+        end_date: 2025-09
 
     Research:
       - company: Shanghai Jiao Tong University
@@ -63,8 +81,24 @@ cv:
       - title: 1st Place, Dynamic Novel View Synthesis Track
         date: 2025
         awarder: CVPR 2025 NeRSemble Benchmark Challenge
+        url: https://kaldir.vc.cit.tum.de/nersemble_benchmark/cvpr2025
         summary: >
           Team members: Zhengyu Diao, Zhiwen Chen, Yujie Sun, and Zhuoqiang Cai.
+
+      - title: Huawei Intelligent Base Scholarship
+        date: 2024
+        awarder: Huawei
+
+    Projects:
+      - name: Focus Pet
+        summary: >
+          A local-first desktop focus companion that turns attention rhythms into
+          responsive virtual-pet behavior, reminders, widgets, and readable history.
+        url: https://github.com/VhahahaV/focus_pet_tauri
+        highlights:
+          - Native macOS implementation in Swift and SwiftUI.
+          - Cross-platform evolution with Tauri, React, TypeScript, and Rust.
+          - "Public repositories: VhahahaV/focus_pet and VhahahaV/focus_pet_tauri."
 
     Interests:
       - name: Research Interests
@@ -72,3 +106,8 @@ cv:
         keywords: >
           Generative AI, Multimodal Learning, Digital Humans, 3D Facial Motion Generation,
           3D Avatars, Intelligent Agents
+
+      - name: Sports and Outdoors
+        icon: fa-solid fa-person-running
+        keywords: >
+          Strength Training, Basketball, Running, Rock Climbing, Swimming, Skiing, Hiking

@@ -15,7 +15,12 @@
           <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
         </h3>
         <p>{{ project.description }}</p>
-        <a class="project-read-more" href="{{ project.url | relative_url }}">Project details →</a>
+        <div class="featured-project-links">
+          {% for link in project.links %}
+            <a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.label }} ↗</a>
+          {% endfor %}
+          <a class="project-read-more" href="{{ project.url | relative_url }}">Details →</a>
+        </div>
       </div>
     </article>
   {% endfor %}

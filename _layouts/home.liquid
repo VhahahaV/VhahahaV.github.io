@@ -31,6 +31,49 @@ layout: default
 
     <div class="home-intro">{{ content }}</div>
 
+    {% if page.experience or page.education %}
+      <section class="home-section home-journey" aria-labelledby="journey-heading">
+        <div class="section-heading-row">
+          <div>
+            <p class="section-kicker">Background</p>
+            <h2 id="journey-heading">Experience &amp; Education</h2>
+          </div>
+        </div>
+        <div class="journey-grid">
+          <div class="journey-column">
+            <h3>Experience</h3>
+            <div class="timeline-list">
+              {% for item in page.experience %}
+                <article class="timeline-item">
+                  <p class="timeline-period">{{ item.period }}</p>
+                  <div>
+                    <h4>{{ item.role }}</h4>
+                    <p class="timeline-organization">{{ item.organization }}</p>
+                    <p class="timeline-meta">{{ item.location }}</p>
+                  </div>
+                </article>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="journey-column">
+            <h3>Education</h3>
+            <div class="timeline-list">
+              {% for item in page.education %}
+                <article class="timeline-item">
+                  <p class="timeline-period">{{ item.period }}</p>
+                  <div>
+                    <h4>{{ item.program }}</h4>
+                    <p class="timeline-organization">{{ item.institution }}</p>
+                    <p class="timeline-meta">{{ item.location }}</p>
+                  </div>
+                </article>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </section>
+    {% endif %}
+
     {% if page.selected_papers %}
       <section class="home-section home-publications" aria-labelledby="selected-publications-heading">
         <div class="section-heading-row">
@@ -47,13 +90,41 @@ layout: default
     <section class="home-section home-projects" aria-labelledby="selected-projects-heading">
       <div class="section-heading-row">
         <div>
-          <p class="section-kicker">Current directions</p>
-          <h2 id="selected-projects-heading">Selected Projects</h2>
+          <p class="section-kicker">Independent build</p>
+          <h2 id="selected-projects-heading">Open-source Project</h2>
         </div>
-        <a class="section-link" href="{{ '/projects/' | relative_url }}">Explore projects →</a>
+        <a class="section-link" href="{{ '/projects/' | relative_url }}">Project details →</a>
       </div>
       {% include featured_projects.liquid %}
     </section>
+
+    {% if page.honors %}
+      <section class="home-section home-honors" aria-labelledby="honors-heading">
+        <div class="section-heading-row">
+          <div>
+            <p class="section-kicker">Recognition</p>
+            <h2 id="honors-heading">Selected Honors</h2>
+          </div>
+        </div>
+        <div class="honors-list">
+          {% for honor in page.honors %}
+            <article class="honor-row">
+              <p class="honor-year">{{ honor.year }}</p>
+              <div>
+                <h3>
+                  {% if honor.url %}<a href="{{ honor.url }}" target="_blank" rel="noopener">{% endif %}
+                  {{- honor.title -}}
+                  {% if honor.url %}</a>{% endif %}
+                </h3>
+                {% if honor.detail %}
+                  <p>{{ honor.detail }}</p>
+                {% endif %}
+              </div>
+            </article>
+          {% endfor %}
+        </div>
+      </section>
+    {% endif %}
 
     {% if page.announcements and page.announcements.enabled %}
       <section class="home-section home-news" aria-labelledby="recent-news-heading">
@@ -65,6 +136,23 @@ layout: default
           <a class="section-link" href="{{ '/news/' | relative_url }}">All news →</a>
         </div>
         {% include news.liquid limit=true %}
+      </section>
+    {% endif %}
+
+    {% if page.interests %}
+      <section class="home-section home-interests" aria-labelledby="interests-heading">
+        <div class="section-heading-row">
+          <div>
+            <p class="section-kicker">Beyond research</p>
+            <h2 id="interests-heading">Always in Motion</h2>
+          </div>
+        </div>
+        <p class="interests-intro">Away from the screen, I enjoy training, team sports, and being outdoors.</p>
+        <ul class="interest-list" aria-label="Personal interests">
+          {% for interest in page.interests %}
+            <li>{{ interest }}</li>
+          {% endfor %}
+        </ul>
       </section>
     {% endif %}
 
