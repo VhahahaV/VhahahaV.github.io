@@ -4,11 +4,11 @@ permalink: /projects/
 title: Projects
 nav: true
 nav_order: 3
-description: Open-source software projects by Zhuoqiang Cai.
+description: Research and independent engineering projects by Zhuoqiang Cai.
 ---
 
 <div class="page-intro">
-  <p>Independent software built through vibe coding, with an emphasis on thoughtful desktop experiences, local-first design, and robust engineering.</p>
+  <p>Selected work spanning multimodal generative research and independent desktop engineering, with an emphasis on clear problem formulation, local-first design, and verifiable implementation.</p>
 </div>
 
 <div class="projects">

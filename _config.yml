@@ -9,8 +9,8 @@ last_name: Cai
 contact_note: >
   For research discussions or collaboration, please reach me by email.
 description: >
-  Zhuoqiang Cai is a master’s student at Shanghai Jiao Tong University working on generative AI,
-  multimodal learning, digital humans, 3D facial motion, intelligent agents, and local-first desktop software.
+  Zhuoqiang Cai is an M.S. student at Shanghai Jiao Tong University developing multimodal
+  generative models for interactive digital humans and context-aware intelligent agents.
 footer_text: >
   Built with <a href="https://github.com/alshedivat/al-folio" target="_blank">al-folio</a>
   and hosted on <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
@@ -19,7 +19,7 @@ lang: en
 icon: apple-touch-icon.png
 apple_touch_icon: apple-touch-icon.png
 
-url: https://VhahahaV.github.io
+url: https://vhahahav.github.io
 baseurl:
 last_updated: false # set to true if you want to display last updated in the footer
 impressum_path: # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
@@ -389,6 +389,7 @@ filtered_bibtex_keywords:
     altmetric,
     annotation,
     arxiv,
+    author_role,
     award,
     award_name,
     bibtex_show,
@@ -404,9 +405,11 @@ filtered_bibtex_keywords:
     pmid,
     poster,
     preview,
+    project,
     selected,
     slides,
     supp,
+    takeaway,
     video,
     website,
   ]
@@ -438,9 +441,10 @@ external_links:
 imagemagick:
   enabled: true # enables responsive images for your site (recommended, see https://github.com/alshedivat/al-folio/issues/537)
   widths:
+    - 320
     - 480
-    - 800
-    - 1400
+    - 720
+    - 1200
   input_directories:
     - assets/img/
   input_formats:

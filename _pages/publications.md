@@ -8,7 +8,7 @@ description: Publications by Zhuoqiang Cai on digital humans, multimodal generat
 ---
 
 <div class="page-intro">
-  <p>My work focuses on multimodal generative modeling for expressive digital humans, including conversational facial motion and animatable 3D avatars.</p>
+  <p>My publications develop multimodal generative models for expressive digital humans, from first-author work on conversational 3D facial motion to co-authored work on few-shot animatable avatars.</p>
 </div>
 
 <div class="publications">

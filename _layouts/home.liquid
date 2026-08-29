@@ -1,18 +1,37 @@
 ---
 layout: default
 ---
-{% capture protected_social_links %}{% social_links %}{% endcapture %}
+<a class="home-site-brand" href="{{ '/' | relative_url }}" aria-label="Zhuoqiang Cai — home">Zhuoqiang Cai</a>
+
 <div class="post home-page">
   <article>
     <header class="home-hero">
       <div class="home-hero__copy">
-        <p class="home-eyebrow">Generative AI · Multimodal Learning · Digital Humans · Intelligent Agents</p>
+        <p class="home-eyebrow">Multimodal Generative Models for Interactive Intelligence</p>
         <h1 class="home-title">Zhuoqiang Cai</h1>
         <p class="home-role">{{ page.subtitle }}</p>
-        <p class="home-tagline">I build generative models for interactive digital humans and intelligent agents.</p>
-        {% if page.social %}
-          <div class="home-social" aria-label="Academic and social links">{{ protected_social_links | al_email_protect_html }}</div>
-        {% endif %}
+        <p class="home-tagline">I develop generative models for expressive digital humans and context-aware intelligent agents.</p>
+
+        <nav class="home-actions" aria-label="Primary profile links">
+          <a class="home-action home-action--primary" href="{{ '/publications/' | relative_url }}">Publications</a>
+          <a class="home-action" href="{{ '/cv/' | relative_url }}">CV</a>
+          <a class="home-action" href="#contact-heading">Email</a>
+        </nav>
+
+        <ul class="home-evidence" aria-label="Selected research evidence">
+          <li>
+            <strong>ACM MM 2026</strong>
+            <span>First Author</span>
+          </li>
+          <li>
+            <strong>CVPR 2026</strong>
+            <span>Co-author</span>
+          </li>
+          <li>
+            <strong>CVPR 2025 Challenge</strong>
+            <span>1st Place</span>
+          </li>
+        </ul>
       </div>
 
       {% if page.profile and page.profile.image %}
@@ -21,15 +40,76 @@ layout: default
             class="home-portrait"
             src="{{ page.profile.image | prepend: '/assets/img/' | relative_url }}"
             alt="Portrait of Zhuoqiang Cai"
-            width="1200"
-            height="1200"
+            width="720"
+            height="900"
             loading="eager"
+            fetchpriority="high"
           >
         </figure>
       {% endif %}
     </header>
 
-    <div class="home-intro">{{ content }}</div>
+    {% if page.selected_papers %}
+      <section class="home-section home-publications" aria-labelledby="selected-publications-heading">
+        <div class="section-heading-row">
+          <div>
+            <p class="section-kicker">Research output</p>
+            <h2 id="selected-publications-heading">Selected Publications</h2>
+          </div>
+          <a class="section-link" href="{{ '/publications/' | relative_url }}">View all publications →</a>
+        </div>
+        {% include selected_papers.liquid %}
+      </section>
+    {% endif %}
+
+    <section class="home-section home-research" aria-labelledby="research-agenda-heading">
+      <div class="section-heading-row">
+        <div>
+          <p class="section-kicker">Research agenda</p>
+          <h2 id="research-agenda-heading">From expressive humans to interactive intelligence</h2>
+        </div>
+      </div>
+      <div class="home-intro">{{ content }}</div>
+    </section>
+
+    {% if page.honors %}
+      <section class="home-section home-honors" aria-labelledby="honors-heading">
+        <div class="section-heading-row">
+          <div>
+            <p class="section-kicker">Recognition</p>
+            <h2 id="honors-heading">Selected Honors</h2>
+          </div>
+        </div>
+        <div class="honors-list">
+          {% for honor in page.honors %}
+            <article class="honor-row">
+              <p class="honor-year">{{ honor.year }}</p>
+              <div>
+                <h3>
+                  {% if honor.url %}<a href="{{ honor.url }}" target="_blank" rel="noopener">{% endif %}
+                  {{- honor.title -}}
+                  {% if honor.url %}</a>{% endif %}
+                </h3>
+                {% if honor.detail %}
+                  <p>{{ honor.detail }}</p>
+                {% endif %}
+              </div>
+            </article>
+          {% endfor %}
+        </div>
+      </section>
+    {% endif %}
+
+    <section class="home-section home-projects" aria-labelledby="engineering-highlight-heading">
+      <div class="section-heading-row">
+        <div>
+          <p class="section-kicker">Independent engineering</p>
+          <h2 id="engineering-highlight-heading">Engineering Highlight</h2>
+        </div>
+        <a class="section-link" href="{{ '/projects/' | relative_url }}">Explore projects →</a>
+      </div>
+      {% include featured_projects.liquid %}
+    </section>
 
     {% if page.experience or page.education %}
       <section class="home-section home-journey" aria-labelledby="journey-heading">
@@ -74,77 +154,6 @@ layout: default
       </section>
     {% endif %}
 
-    {% if page.selected_papers %}
-      <section class="home-section home-publications" aria-labelledby="selected-publications-heading">
-        <div class="section-heading-row">
-          <div>
-            <p class="section-kicker">Research output</p>
-            <h2 id="selected-publications-heading">Selected Publications</h2>
-          </div>
-          <a class="section-link" href="{{ '/publications/' | relative_url }}">View all publications →</a>
-        </div>
-        {% include selected_papers.liquid %}
-      </section>
-    {% endif %}
-
-    <section class="home-section home-projects" aria-labelledby="selected-projects-heading">
-      <div class="section-heading-row">
-        <div>
-          <p class="section-kicker">Independent build</p>
-          <h2 id="selected-projects-heading">Open-source Project</h2>
-        </div>
-        <a class="section-link" href="{{ '/projects/' | relative_url }}">Project details →</a>
-      </div>
-      {% include featured_projects.liquid %}
-    </section>
-
-    {% if page.honors %}
-      <section class="home-section home-honors" aria-labelledby="honors-heading">
-        <div class="section-heading-row">
-          <div>
-            <p class="section-kicker">Recognition</p>
-            <h2 id="honors-heading">Selected Honors</h2>
-          </div>
-        </div>
-        <div class="honors-list">
-          {% for honor in page.honors %}
-            <article class="honor-row">
-              <p class="honor-year">{{ honor.year }}</p>
-              <div>
-                <h3>
-                  {% if honor.url %}<a href="{{ honor.url }}" target="_blank" rel="noopener">{% endif %}
-                  {{- honor.title -}}
-                  {% if honor.url %}</a>{% endif %}
-                </h3>
-                {% if honor.detail %}
-                  <p>{{ honor.detail }}</p>
-                {% endif %}
-              </div>
-            </article>
-          {% endfor %}
-        </div>
-      </section>
-    {% endif %}
-
-    {% if page.interests %}
-      <section class="home-section home-interests" aria-labelledby="interests-heading">
-        <div class="section-heading-row">
-          <div>
-            <p class="section-kicker">Beyond research</p>
-            <h2 id="interests-heading">Personal Interests</h2>
-          </div>
-        </div>
-        <p class="interests-intro">
-          Away from the screen, I enjoy strength training, basketball, running, rock climbing, swimming, skiing, and hiking.
-        </p>
-        <ul class="interest-list" aria-label="Personal interests">
-          {% for interest in page.interests %}
-            <li>{{ interest }}</li>
-          {% endfor %}
-        </ul>
-      </section>
-    {% endif %}
-
     {% if page.announcements and page.announcements.enabled %}
       <section class="home-section home-news" aria-labelledby="recent-news-heading">
         <div class="section-heading-row">
@@ -158,13 +167,39 @@ layout: default
       </section>
     {% endif %}
 
-    {% if page.social %}
-      <section class="home-section home-contact" aria-labelledby="contact-heading">
-        <p class="section-kicker">Contact</p>
-        <h2 id="contact-heading">Let’s talk research.</h2>
-        <p>{{ site.contact_note }}</p>
-        <div class="contact-icons">{{ protected_social_links | al_email_protect_html }}</div>
-      </section>
+    <section class="home-section home-contact" aria-labelledby="contact-heading">
+      <p class="section-kicker">Contact</p>
+      <h2 id="contact-heading">Let’s talk research.</h2>
+      <p>{{ site.contact_note }}</p>
+      <div class="contact-methods">
+        {% al_email_protect_link site.data.socials.email %}
+        <a href="https://github.com/{{ site.data.socials.github_username }}" target="_blank" rel="noopener" aria-label="GitHub profile">GitHub ↗</a>
+        <a href="https://orcid.org/{{ site.data.socials.orcid_id }}" target="_blank" rel="noopener" aria-label="ORCID profile">ORCID ↗</a>
+      </div>
+    </section>
+
+    {% if page.interests %}
+      <aside class="home-interests" aria-label="Personal interests">
+        <p><strong>Beyond research:</strong> strength training, basketball, running, rock climbing, swimming, skiing, and hiking.</p>
+      </aside>
     {% endif %}
   </article>
 </div>
+
+{% if site.serve_schema_org %}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Zhuoqiang Cai",
+      "url": "{{ '/' | absolute_url }}",
+      "image": "{{ '/assets/img/prof_pic-portrait.webp' | absolute_url }}",
+      "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "Shanghai Jiao Tong University"
+      },
+      "knowsAbout": ["Multimodal Generative Modeling", "Conversational 3D Facial Motion", "Animatable 3D Avatars", "Long-Horizon Intelligent Agents"],
+      "sameAs": ["https://github.com/{{ site.data.socials.github_username }}", "https://orcid.org/{{ site.data.socials.orcid_id }}"]
+    }
+  </script>
+{% endif %}

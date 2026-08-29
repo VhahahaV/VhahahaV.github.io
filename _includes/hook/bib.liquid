@@ -1,0 +1,16 @@
+{% if entry.author_role %}
+  <div class="publication-role">
+    <span>{{ entry.abbr }} · {{ entry.year }}</span>
+    <strong>{{ entry.author_role }}</strong>
+  </div>
+{% endif %}
+
+{% if entry.takeaway %}
+  <p class="publication-takeaway">{{ entry.takeaway }}</p>
+{% endif %}
+
+{% if entry.project %}
+  <div class="publication-project-link">
+    <a href="{{ entry.project | relative_url }}">Project page →</a>
+  </div>
+{% endif %}

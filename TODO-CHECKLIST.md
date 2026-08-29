@@ -26,7 +26,7 @@ sitemap: false
 ## ECHO
 
 - [ ] arXiv 链接发布后加入。
-- [ ] Project Page 上线后加入。
+- [ ] 官方外部 Project Page 上线后加入。
 - [ ] Code / Video / Poster 链接公开后加入。
 
 ## FHAvatar
@@ -38,4 +38,4 @@ sitemap: false
 
 - [ ] 淘天集团实习的具体岗位英文名称与可公开的工作摘要。
 - [ ] 其他奖学金、校内荣誉或学术服务，仅加入可公开且本人确认的内容。
-- [ ] Long-Horizon Intelligent Agents 项目有公开论文或项目页后，再把当前概述升级为正式成果条目。
+- [ ] Long-Horizon Intelligent Agents 有公开论文或实质结果后，再把当前研究概述升级为正式成果条目。
