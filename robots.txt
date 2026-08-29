@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://VhahahaV.github.io/sitemap.xml
+Sitemap: https://vhahahav.github.io/sitemap.xml
