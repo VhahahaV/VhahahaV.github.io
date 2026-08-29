@@ -6,7 +6,7 @@ nav: false
 nav_order: 1
 subtitle: M.S. Student in Computer Science and Technology at Shanghai Jiao Tong University
 profile:
-  image: prof_pic-portrait.webp
+  image: prof_pic-upper-body.webp
   image_circular: false
 selected_papers: true
 announcements:

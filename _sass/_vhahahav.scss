@@ -108,7 +108,7 @@ h3 {
 
 .home-hero {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 216px;
+  grid-template-columns: minmax(0, 1fr) 260px;
   gap: clamp(2.4rem, 7vw, 5.8rem);
   align-items: center;
   min-height: 400px;
@@ -218,8 +218,8 @@ h3 {
 }
 
 .home-portrait-wrap {
-  width: 216px;
-  aspect-ratio: 4 / 5;
+  width: 260px;
+  aspect-ratio: 5 / 4;
   margin: 0;
   overflow: hidden;
   border: 1px solid var(--global-divider-color);
@@ -540,7 +540,7 @@ ol.bibliography .links a.btn:hover,
 
 .featured-project-row {
   display: grid;
-  grid-template-columns: minmax(280px, 44%) minmax(0, 1fr);
+  grid-template-columns: minmax(230px, 34%) minmax(0, 1fr);
   gap: clamp(1.4rem, 3.6vw, 2.8rem);
   align-items: center;
   padding: 1.7rem 0;
@@ -549,6 +549,8 @@ ol.bibliography .links a.btn:hover,
 
 .featured-project-media {
   display: block;
+  width: 100%;
+  max-width: 340px;
   overflow: hidden;
   border: 1px solid var(--global-divider-color);
   border-radius: 10px;
@@ -795,6 +797,16 @@ ol.bibliography .links a.btn:hover,
   color: var(--global-theme-color);
 }
 
+.contact-email {
+  gap: 0.38rem;
+}
+
+.contact-email small {
+  color: var(--global-text-color-light);
+  font-size: 0.7rem;
+  font-weight: 520;
+}
+
 /* Standard project cards and pages */
 .projects .card,
 .card {
@@ -904,7 +916,7 @@ footer.fixed-bottom {
   }
 
   .home-hero {
-    grid-template-columns: minmax(0, 1fr) 190px;
+    grid-template-columns: minmax(0, 1fr) 220px;
     gap: 2.1rem;
     min-height: 0;
     padding-bottom: 3.5rem;
@@ -948,7 +960,7 @@ footer.fixed-bottom {
 
   .home-portrait-wrap {
     grid-row: 1;
-    width: 150px;
+    width: 190px;
   }
 
   .home-title {

@@ -40,8 +40,8 @@ layout: default
             class="home-portrait"
             src="{{ page.profile.image | prepend: '/assets/img/' | relative_url }}"
             alt="Portrait of Zhuoqiang Cai"
-            width="720"
-            height="900"
+            width="800"
+            height="640"
             loading="eager"
             fetchpriority="high"
           >
@@ -172,7 +172,16 @@ layout: default
       <h2 id="contact-heading">Let’s talk research.</h2>
       <p>{{ site.contact_note }}</p>
       <div class="contact-methods">
-        {% al_email_protect_link site.data.socials.email %}
+        {% assign email_parts = site.data.socials.email | split: '@' %}
+        <a
+          href="#"
+          class="al-email-protect contact-email"
+          data-eu="{{ email_parts[0] }}"
+          data-ed="{{ email_parts[1] }}"
+          aria-label="Copy email address"
+        >
+          <span>Email</span><small>click to copy</small>
+        </a>
         <a href="https://github.com/{{ site.data.socials.github_username }}" target="_blank" rel="noopener" aria-label="GitHub profile">GitHub ↗</a>
         <a href="https://orcid.org/{{ site.data.socials.orcid_id }}" target="_blank" rel="noopener" aria-label="ORCID profile">ORCID ↗</a>
       </div>
@@ -193,7 +202,7 @@ layout: default
       "@type": "Person",
       "name": "Zhuoqiang Cai",
       "url": "{{ '/' | absolute_url }}",
-      "image": "{{ '/assets/img/prof_pic-portrait.webp' | absolute_url }}",
+      "image": "{{ '/assets/img/prof_pic-upper-body.webp' | absolute_url }}",
       "affiliation": {
         "@type": "CollegeOrUniversity",
         "name": "Shanghai Jiao Tong University"
